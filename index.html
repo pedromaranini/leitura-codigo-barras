@@ -9,6 +9,8 @@
 
     <h1>Lendo código de barras</h1>
 
+    <div id="resultado"></div>
+
     <div id="camera"></div>
     
     <script src="node_modules/quagga/dist/quagga.min.js"></script>
@@ -34,6 +36,8 @@
 
     Quagga.onDetected(function(data) {
         console.log(data);
+
+        document.querySelector('#resultado').innerHTML = data.codeResult.code;
     });
 
     </script>
